@@ -11,5 +11,4 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/longhorn499/ActivityIndicatingNavigationItem.git", :tag => s.version }
   s.source_files = 'Source/*.swift'
   s.requires_arc = true
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4' }
 end
