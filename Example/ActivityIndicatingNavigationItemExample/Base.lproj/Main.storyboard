@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dGZ-Ol-am8">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="BW5-VF-mLZ">
+            <objects>
+                <navigationController id="dGZ-Ol-am8" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p28-Cs-lhv">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vhg-81-j4d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0F5-UC-ACe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-553" y="130"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-B7-JTC">
+                                <rect key="frame" x="133.5" y="279.5" width="107" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jDJ-PF-ijv"/>
+                                </constraints>
+                                <state key="normal" title="Start Animating"/>
+                                <connections>
+                                    <action selector="tapStartAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Hv-uN-0Mc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxO-ii-0tJ">
+                                <rect key="frame" x="135" y="335.5" width="105" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="j1Q-kJ-Mf6"/>
+                                </constraints>
+                                <state key="normal" title="Stop Animating"/>
+                                <connections>
+                                    <action selector="tapStopAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ze-ue-PEO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-32" id="GFG-Iz-rOR"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JK6-0C-AKQ"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="height" secondItem="ADS-B7-JTC" secondAttribute="height" id="KS8-Hr-lEy"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="top" secondItem="ADS-B7-JTC" secondAttribute="bottom" constant="12" id="LOc-dW-gtY"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tYf-1W-IF4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bcM-Hq-t7q" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItem">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="pzr-o7-LvA">
+                            <connections>
+                                <action selector="tapSave:" destination="BYZ-38-t0r" id="MA0-W7-JQL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatingNavigationItem" destination="bcM-Hq-t7q" id="BQi-Zc-4Fl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="358" y="130"/>
+        </scene>
+    </scenes>
+</document>
