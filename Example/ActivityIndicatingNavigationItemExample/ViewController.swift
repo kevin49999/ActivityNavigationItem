@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ActivityIndicatingNavigationItem
 
 class ViewController: UIViewController {
 

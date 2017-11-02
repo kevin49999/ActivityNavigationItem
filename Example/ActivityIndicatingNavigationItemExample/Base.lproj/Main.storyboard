@@ -65,7 +65,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bcM-Hq-t7q" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItem">
+                    <navigationItem key="navigationItem" id="bcM-Hq-t7q" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="pzr-o7-LvA">
                             <connections>
                                 <action selector="tapSave:" destination="BYZ-38-t0r" id="MA0-W7-JQL"/>

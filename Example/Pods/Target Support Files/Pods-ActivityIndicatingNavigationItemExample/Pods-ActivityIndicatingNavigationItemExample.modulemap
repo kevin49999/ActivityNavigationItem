@@ -1,6 +1,0 @@
-framework module Pods_ActivityIndicatingNavigationItemExample {
-  umbrella header "Pods-ActivityIndicatingNavigationItemExample-umbrella.h"
-
-  export *
-  module * { export * }
-}

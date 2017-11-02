@@ -1,6 +1,0 @@
-framework module ActivityIndicatingNavigationItem {
-  umbrella header "ActivityIndicatingNavigationItem-umbrella.h"
-
-  export *
-  module * { export * }
-}
