@@ -9,7 +9,7 @@ _UINavigationItem subclass that indicates activity with UIActivityIndicator for 
 
 ## Description
 
-UINavigationItem subclass you can use to show activity indicators in the left/right sides and then revert back to your preset bar button items. 
+UINavigationItem subclass you can use to animate a UIActivityIndicatorView in the left/right positions - then when finished animating revert to your preset bar button items. 
 - Helpful for indicating activity with Save/Done bar button items 
 - Common in iOS UI/UX design for edit profile screens, save avatar screens, etc.
 
@@ -30,7 +30,7 @@ Or you can manually import the files from the Source folder.
 
 ## Usage
 
-If you're using a Storyboard, set the name of the class and create an outlet:
+If you're using a Storyboard, set the name of the Class and Module, then create an outlet:
 
 ``` swift
 @IBOutlet weak var activityIndicatingNavigationItem: ActivityIndicatingNavigationItem!
