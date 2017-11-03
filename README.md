@@ -64,7 +64,7 @@ activityIndicatingNavigationItem.indicatorStyle = .white
 
 ## Requirements
 
-Written in Swift 4.0, requires iOS 10.0 and above, Xcode 9.0 and above.
+Written in Swift 4.0, requires iOS 10.3 and above, Xcode 9.0 and above.
 
 
 ## Credits
