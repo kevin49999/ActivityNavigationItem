@@ -13,7 +13,7 @@ UINavigationItem subclass you can use to animate a UIActivityIndicatorView in th
 - Helpful for indicating activity with Save/Done bar button items 
 - Common in iOS UI/UX design for edit profile screens, save avatar screens, etc.
 
-<img src="https://raw.githubusercontent.com/longhorn499/ActivityIndicatingNavigationItem/master/Screenshots/Screenshot.png" width="375px" height="667px"/>
+<img src="https://raw.githubusercontent.com/longhorn499/ActivityIndicatingNavigationItem/master/Screenshots/Animating.gif"/>
 
 ## Installation
 
