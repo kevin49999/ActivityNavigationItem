@@ -35,21 +35,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-B7-JTC">
-                                <rect key="frame" x="133.5" y="279.5" width="107" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="187.5" height="60"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="jDJ-PF-ijv"/>
+                                    <constraint firstAttribute="height" constant="60" id="jDJ-PF-ijv"/>
                                 </constraints>
-                                <state key="normal" title="Start Animating"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Start Animating">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="tapStartAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Hv-uN-0Mc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxO-ii-0tJ">
-                                <rect key="frame" x="135" y="335.5" width="105" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="j1Q-kJ-Mf6"/>
-                                </constraints>
-                                <state key="normal" title="Stop Animating"/>
+                                <rect key="frame" x="187.5" y="64" width="187.5" height="60"/>
+                                <color key="backgroundColor" red="0.70588235290000001" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Stop Animating">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="tapStopAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ze-ue-PEO"/>
                                 </connections>
@@ -57,11 +62,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ADS-B7-JTC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-32" id="GFG-Iz-rOR"/>
-                            <constraint firstItem="ADS-B7-JTC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JK6-0C-AKQ"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I3o-J7-hVC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XxO-ii-0tJ" secondAttribute="trailing" id="Jay-4C-B2e"/>
                             <constraint firstItem="XxO-ii-0tJ" firstAttribute="height" secondItem="ADS-B7-JTC" secondAttribute="height" id="KS8-Hr-lEy"/>
-                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="top" secondItem="ADS-B7-JTC" secondAttribute="bottom" constant="12" id="LOc-dW-gtY"/>
-                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tYf-1W-IF4"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U7e-50-843"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="leading" secondItem="ADS-B7-JTC" secondAttribute="trailing" id="ZrB-p8-cKT"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="width" secondItem="XxO-ii-0tJ" secondAttribute="width" id="a2Z-QR-yAc"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rQn-4x-Yo4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -78,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="358" y="130"/>
+            <point key="canvasLocation" x="357.60000000000002" y="129.98500749625188"/>
         </scene>
     </scenes>
 </document>
