@@ -39,8 +39,8 @@ class ActivityIndicatingNavigationItemTests: XCTestCase {
         }
         
         if let rightActivityIndicatorView = rightBarButtonItem.customView as? UIActivityIndicatorView {
-            XCTAssertTrue(rightBarButtonItem.isEnabled)
             XCTAssertTrue(rightActivityIndicatorView.isAnimating)
+            XCTAssertTrue(rightBarButtonItem.isEnabled)
         } else {
             XCTFail("Custom view should be UIActivityIndicatorView")
         }
@@ -54,8 +54,8 @@ class ActivityIndicatingNavigationItemTests: XCTestCase {
         }
         
         if let leftActivityIndicatorView = leftBarButtonItem.customView as? UIActivityIndicatorView {
-            XCTAssertTrue(leftBarButtonItem.isEnabled)
             XCTAssertTrue(leftActivityIndicatorView.isAnimating)
+            XCTAssertTrue(leftBarButtonItem.isEnabled)
         } else {
             XCTFail("Custom view should be UIActivityIndicatorView")
         }
@@ -64,11 +64,16 @@ class ActivityIndicatingNavigationItemTests: XCTestCase {
     // MARK: Stop Animating
     
     func testRightStopAnimating() {
+        let initialRightBarButtonItem = activityItemUnderTest.rightBarButtonItem
+        
         activityItemUnderTest.startAnimating(.right)
+        XCTAssertTrue(initialRightBarButtonItem != activityItemUnderTest.rightBarButtonItem)
+        
         activityItemUnderTest.stopAnimating(.right)
+        XCTAssertTrue(initialRightBarButtonItem == activityItemUnderTest.rightBarButtonItem)
 
         if let _ = activityItemUnderTest.rightBarButtonItem?.customView as? UIActivityIndicatorView {
-            XCTFail("Should not still be UIActivityIndicatorView") // Possible strange use case where default value as a UIActivityIndicatorView..
+            XCTFail("Should not still be UIActivityIndicatorView") // Possible strange use case where default value is a UIActivityIndicatorView..
         }
         
         if let rightBarButtonItem = activityItemUnderTest.rightBarButtonItem {
@@ -77,8 +82,13 @@ class ActivityIndicatingNavigationItemTests: XCTestCase {
     }
     
     func testLeftStopAnimating() {
+        let initialLeftBarButtonItem = activityItemUnderTest.leftBarButtonItem
+        
         activityItemUnderTest.startAnimating(.left)
+        XCTAssertTrue(initialLeftBarButtonItem != activityItemUnderTest.leftBarButtonItem)
+        
         activityItemUnderTest.stopAnimating(.left)
+        XCTAssertTrue(initialLeftBarButtonItem == activityItemUnderTest.leftBarButtonItem)
         
         if let _ = activityItemUnderTest.leftBarButtonItem?.customView as? UIActivityIndicatorView {
             XCTFail("Should not still be UIActivityIndicatorView") // ""
