@@ -30,7 +30,7 @@
 		0A8D1E8C1FA7FE2D004F8D8B /* ActivityIndicatingNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityIndicatingNavigationItem.h; sourceTree = "<group>"; };
 		0A8D1E8D1FA7FE2D004F8D8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8D1E921FA7FE31004F8D8B /* ActivityIndicatingNavigationItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatingNavigationItemTests.swift; sourceTree = "<group>"; };
-		0A8D1E931FA7FE31004F8D8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		525E3F361FBB6DF6004E6556 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				0A8D1E921FA7FE31004F8D8B /* ActivityIndicatingNavigationItemTests.swift */,
-				0A8D1E931FA7FE31004F8D8B /* Info.plist */,
+				525E3F361FBB6DF6004E6556 /* Info.plist */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -397,7 +397,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
-				INFOPLIST_FILE = ActivityIndicatingNavigationItemTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Flower-From-Rock.ActivityIndicatingNavigationItemTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -412,7 +412,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
-				INFOPLIST_FILE = ActivityIndicatingNavigationItemTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Flower-From-Rock.ActivityIndicatingNavigationItemTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

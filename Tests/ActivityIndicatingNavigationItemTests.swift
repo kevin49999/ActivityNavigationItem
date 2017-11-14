@@ -11,26 +11,81 @@ import XCTest
 
 class ActivityIndicatingNavigationItemTests: XCTestCase {
     
+    // MARK: SUT (System Under Test) Variable
+    
+    var activityItemUnderTest: ActivityIndicatingNavigationItem!
+    
+    // MARK: Setup/TearDown
+    
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        activityItemUnderTest = ActivityIndicatingNavigationItem.init(title: "Test", indicatorStyle: .gray)
+        activityItemUnderTest.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: nil, action: nil)
+        activityItemUnderTest.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: nil, action: nil)
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        activityItemUnderTest = nil
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    // MARK: Start Animating
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testRightStartAnimating() {
+        activityItemUnderTest.startAnimating(.right)
+        
+        guard let rightBarButtonItem = activityItemUnderTest.rightBarButtonItem else { XCTFail()
+            return
+        }
+        
+        if let rightActivityIndicatorView = rightBarButtonItem.customView as? UIActivityIndicatorView {
+            XCTAssertTrue(rightBarButtonItem.isEnabled)
+            XCTAssertTrue(rightActivityIndicatorView.isAnimating)
+        } else {
+            XCTFail("Custom view should be UIActivityIndicatorView")
         }
     }
     
+    func testLeftStartAnimating() {
+        activityItemUnderTest.startAnimating(.left)
+        
+        guard let leftBarButtonItem = activityItemUnderTest.leftBarButtonItem else { XCTFail()
+            return
+        }
+        
+        if let leftActivityIndicatorView = leftBarButtonItem.customView as? UIActivityIndicatorView {
+            XCTAssertTrue(leftBarButtonItem.isEnabled)
+            XCTAssertTrue(leftActivityIndicatorView.isAnimating)
+        } else {
+            XCTFail("Custom view should be UIActivityIndicatorView")
+        }
+    }
+    
+    // MARK: Stop Animating
+    
+    func testRightStopAnimating() {
+        activityItemUnderTest.startAnimating(.right)
+        activityItemUnderTest.stopAnimating(.right)
+
+        if let _ = activityItemUnderTest.rightBarButtonItem?.customView as? UIActivityIndicatorView {
+            XCTFail("Should not still be UIActivityIndicatorView") // Possible strange use case where default value as a UIActivityIndicatorView..
+        }
+        
+        if let rightBarButtonItem = activityItemUnderTest.rightBarButtonItem {
+            XCTAssertTrue(rightBarButtonItem.isEnabled, "If right bar item non-nil, should be back to enabled")
+        }
+    }
+    
+    func testLeftStopAnimating() {
+        activityItemUnderTest.startAnimating(.left)
+        activityItemUnderTest.stopAnimating(.left)
+        
+        if let _ = activityItemUnderTest.leftBarButtonItem?.customView as? UIActivityIndicatorView {
+            XCTFail("Should not still be UIActivityIndicatorView") // ""
+        }
+        
+        if let leftBarButtonItem = activityItemUnderTest.leftBarButtonItem {
+            XCTAssertTrue(leftBarButtonItem.isEnabled, "If left bar item non-nil, should be back to enabled")
+        }
+    }
 }
