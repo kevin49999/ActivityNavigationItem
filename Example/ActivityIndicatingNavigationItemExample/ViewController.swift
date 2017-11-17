@@ -21,17 +21,32 @@ class ViewController: UIViewController {
         //
     }
     
-    // MARK: IBAction
+    // MARK: IBAction - Right
 
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
         activityIndicatingNavigationItem.startAnimating(.right)
     }
     
-    @IBAction func tapStartAnimating(_ sender: UIButton) {
+    @IBAction func tapStartSave(_ sender: UIButton) {
         activityIndicatingNavigationItem.startAnimating(.right)
     }
     
-    @IBAction func tapStopAnimating(_ sender: UIButton) {
+    @IBAction func tapStopSave(_ sender: UIButton) {
         activityIndicatingNavigationItem.stopAnimating(.right)
     }
+    
+    // MARK: IBAction - Left
+    
+    @IBAction func tapDone(_ sender: UIBarButtonItem) {
+        activityIndicatingNavigationItem.startAnimating(.left)
+    }
+    
+    @IBAction func tapStartDone(_ sender: UIButton) {
+        activityIndicatingNavigationItem.startAnimating(.left)
+    }
+    
+    @IBAction func tapStopDone(_ sender: UIButton) {
+        activityIndicatingNavigationItem.stopAnimating(.left)
+    }
+    
 }

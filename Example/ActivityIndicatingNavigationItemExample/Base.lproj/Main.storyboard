@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dGZ-Ol-am8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dGZ-Ol-am8">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,44 +35,79 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADS-B7-JTC">
-                                <rect key="frame" x="0.0" y="64" width="187.5" height="60"/>
+                                <rect key="frame" x="191.5" y="72" width="175.5" height="60"/>
                                 <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="jDJ-PF-ijv"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Start Animating">
+                                <state key="normal" title="Animate Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tapStartAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Hv-uN-0Mc"/>
+                                    <action selector="tapStartSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GrE-fG-NuL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XxO-ii-0tJ">
-                                <rect key="frame" x="187.5" y="64" width="187.5" height="60"/>
-                                <color key="backgroundColor" red="0.70588235290000001" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="191.5" y="140" width="175.5" height="60"/>
+                                <color key="backgroundColor" red="0.76652234792709351" green="0.47299486398696899" blue="0.46554750204086304" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <state key="normal" title="Stop Animating">
+                                <state key="normal" title="Stop">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="tapStopAnimating:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ze-ue-PEO"/>
+                                    <action selector="tapStopSave:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JrL-6V-BPd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVJ-Iw-XiW">
+                                <rect key="frame" x="8" y="72" width="175.5" height="60"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="vZq-4O-C9P"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Animate Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapStartDone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KFj-27-Z1Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwC-DV-wx2">
+                                <rect key="frame" x="8" y="140" width="175.5" height="60"/>
+                                <color key="backgroundColor" red="0.70588235290000001" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapStopDone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uni-RL-iDo"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I3o-J7-hVC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XxO-ii-0tJ" secondAttribute="trailing" id="Jay-4C-B2e"/>
-                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="height" secondItem="ADS-B7-JTC" secondAttribute="height" id="KS8-Hr-lEy"/>
-                            <constraint firstItem="ADS-B7-JTC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U7e-50-843"/>
-                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="leading" secondItem="ADS-B7-JTC" secondAttribute="trailing" id="ZrB-p8-cKT"/>
-                            <constraint firstItem="ADS-B7-JTC" firstAttribute="width" secondItem="XxO-ii-0tJ" secondAttribute="width" id="a2Z-QR-yAc"/>
-                            <constraint firstItem="ADS-B7-JTC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rQn-4x-Yo4"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="leading" secondItem="XwC-DV-wx2" secondAttribute="trailing" constant="8" id="5JQ-eY-ZcV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XxO-ii-0tJ" secondAttribute="trailing" constant="8" id="5NW-6X-k8I"/>
+                            <constraint firstItem="XwC-DV-wx2" firstAttribute="height" secondItem="EVJ-Iw-XiW" secondAttribute="height" id="6wh-b2-yud"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="width" secondItem="EVJ-Iw-XiW" secondAttribute="width" id="7ks-RT-1ej"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="top" secondItem="ADS-B7-JTC" secondAttribute="bottom" constant="8" id="MaJ-ul-kp0"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="height" secondItem="EVJ-Iw-XiW" secondAttribute="height" id="TtD-fq-1Ii"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="height" secondItem="EVJ-Iw-XiW" secondAttribute="height" id="Zw0-yx-I50"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="bKO-1P-UGf"/>
+                            <constraint firstItem="EVJ-Iw-XiW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="beK-0v-TDF"/>
+                            <constraint firstItem="XwC-DV-wx2" firstAttribute="top" secondItem="EVJ-Iw-XiW" secondAttribute="bottom" constant="8" id="caV-ME-5Z3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ADS-B7-JTC" secondAttribute="trailing" constant="8" id="e0q-7r-BS0"/>
+                            <constraint firstItem="ADS-B7-JTC" firstAttribute="leading" secondItem="EVJ-Iw-XiW" secondAttribute="trailing" constant="8" id="fKH-4L-wmW"/>
+                            <constraint firstItem="XxO-ii-0tJ" firstAttribute="width" secondItem="XwC-DV-wx2" secondAttribute="width" id="jyf-cQ-vBP"/>
+                            <constraint firstItem="XwC-DV-wx2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="nFd-GC-GlX"/>
+                            <constraint firstItem="EVJ-Iw-XiW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="oD1-Af-xxi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="bcM-Hq-t7q" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="kjE-UW-dBz">
+                            <connections>
+                                <action selector="tapDone:" destination="BYZ-38-t0r" id="3rq-7d-0lH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="pzr-o7-LvA">
                             <connections>
                                 <action selector="tapSave:" destination="BYZ-38-t0r" id="MA0-W7-JQL"/>
