@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ActivityIndicatingNavigationItem"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "UINavigationItem subclass that indicates activity with UIActivityIndicator for right and left  bar button items"
   s.description  = "Use to easily animate the right or left bar button item with this UINavigationItem subclass. Now a common UI practice in iOS for indicating activity while saving data in edit profile screens, etc."
   s.homepage     = "http://johnsonkevin.com"
