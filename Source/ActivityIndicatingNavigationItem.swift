@@ -22,8 +22,8 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
     
     private var initialRightBarButtonItem: UIBarButtonItem?
     private var initialLeftBarButtonItem: UIBarButtonItem?
-    private var rightActivityIndicator: UIActivityIndicatorView?
-    private var leftActivityIndicator: UIActivityIndicatorView?
+    weak private var rightActivityIndicator: UIActivityIndicatorView?
+    weak private var leftActivityIndicator: UIActivityIndicatorView?
     
     // MARK: Init
     
@@ -64,7 +64,8 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
         }
     }
     
-    @discardableResult public func isAnimating(_ side: ActivityIndicatingNavigationItemSide)-> Bool {
+    @discardableResult
+    public func isAnimating(_ side: ActivityIndicatingNavigationItemSide)-> Bool {
         switch side {
         case .right:
             return rightActivityIndicator?.isAnimating ?? false
