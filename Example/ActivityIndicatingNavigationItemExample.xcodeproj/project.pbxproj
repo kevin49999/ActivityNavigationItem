@@ -346,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				INFOPLIST_FILE = ActivityIndicatingNavigationItemExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Flower-From-Rock.ActivityIndicatingNavigationItemExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -362,7 +362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X6XFU66KA9;
 				INFOPLIST_FILE = ActivityIndicatingNavigationItemExample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Flower-From-Rock.ActivityIndicatingNavigationItemExample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
