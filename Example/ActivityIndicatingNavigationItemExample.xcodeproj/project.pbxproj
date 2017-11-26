@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A4777E21FCA43920050F514 /* BackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4777E11FCA43920050F514 /* BackViewController.swift */; };
 		0A5205C81FA800DE002DDBED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5205C71FA800DE002DDBED /* AppDelegate.swift */; };
 		0A5205CA1FA800DE002DDBED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5205C91FA800DE002DDBED /* ViewController.swift */; };
 		0A5205CD1FA800DE002DDBED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5205CB1FA800DE002DDBED /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A4777E11FCA43920050F514 /* BackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackViewController.swift; sourceTree = "<group>"; };
 		0A5205C41FA800DD002DDBED /* ActivityIndicatingNavigationItemExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActivityIndicatingNavigationItemExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A5205C71FA800DE002DDBED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A5205C91FA800DE002DDBED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,11 +79,12 @@
 			children = (
 				5209B8761FABA5ED00742607 /* ActivityIndicatingNavigationItem.swift */,
 				0A5205C71FA800DE002DDBED /* AppDelegate.swift */,
-				0A5205C91FA800DE002DDBED /* ViewController.swift */,
-				0A5205CB1FA800DE002DDBED /* Main.storyboard */,
 				0A5205CE1FA800DE002DDBED /* Assets.xcassets */,
-				0A5205D01FA800DE002DDBED /* LaunchScreen.storyboard */,
+				0A4777E11FCA43920050F514 /* BackViewController.swift */,
 				0A5205D31FA800DE002DDBED /* Info.plist */,
+				0A5205D01FA800DE002DDBED /* LaunchScreen.storyboard */,
+				0A5205CB1FA800DE002DDBED /* Main.storyboard */,
+				0A5205C91FA800DE002DDBED /* ViewController.swift */,
 			);
 			path = ActivityIndicatingNavigationItemExample;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				5209B8771FABA5ED00742607 /* ActivityIndicatingNavigationItem.swift in Sources */,
 				0A5205CA1FA800DE002DDBED /* ViewController.swift in Sources */,
 				0A5205C81FA800DE002DDBED /* AppDelegate.swift in Sources */,
+				0A4777E21FCA43920050F514 /* BackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

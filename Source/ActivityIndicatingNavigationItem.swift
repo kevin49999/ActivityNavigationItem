@@ -27,7 +27,7 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
     
     // MARK: Init
     
-    public convenience init(title: String, indicatorStyle: UIActivityIndicatorViewStyle) {
+    public convenience init(title: String, indicatorStyle: UIActivityIndicatorViewStyle = .gray) {
         self.init(title: title)
         self.indicatorStyle = indicatorStyle
     }
@@ -82,7 +82,7 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
 
         let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
         rightActivityIndicator = activityIndicator
-        setRightBarButton(UIBarButtonItem.init(customView: activityIndicator), animated: true)
+        rightBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
         rightActivityIndicator?.startAnimating()
     }
     

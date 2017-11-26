@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-553" y="130"/>
         </scene>
-        <!--View Controller-->
+        <!--Example-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,9 +81,20 @@
                                     <action selector="tapStopDone:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uni-RL-iDo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Q-XP-FTW">
+                                <rect key="frame" x="114" y="311.5" width="146" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="7Q5-rj-LQh"/>
+                                </constraints>
+                                <state key="normal" title="Back Button Example"/>
+                                <connections>
+                                    <segue destination="8yI-nS-ETb" kind="show" id="kIE-Xy-s73"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="a9Q-XP-FTW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3zH-Tb-QZ7"/>
                             <constraint firstItem="XxO-ii-0tJ" firstAttribute="leading" secondItem="XwC-DV-wx2" secondAttribute="trailing" constant="8" id="5JQ-eY-ZcV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XxO-ii-0tJ" secondAttribute="trailing" constant="8" id="5NW-6X-k8I"/>
                             <constraint firstItem="XwC-DV-wx2" firstAttribute="height" secondItem="EVJ-Iw-XiW" secondAttribute="height" id="6wh-b2-yud"/>
@@ -98,11 +109,13 @@
                             <constraint firstItem="ADS-B7-JTC" firstAttribute="leading" secondItem="EVJ-Iw-XiW" secondAttribute="trailing" constant="8" id="fKH-4L-wmW"/>
                             <constraint firstItem="XxO-ii-0tJ" firstAttribute="width" secondItem="XwC-DV-wx2" secondAttribute="width" id="jyf-cQ-vBP"/>
                             <constraint firstItem="XwC-DV-wx2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="nFd-GC-GlX"/>
+                            <constraint firstItem="a9Q-XP-FTW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ndO-rR-cOu"/>
                             <constraint firstItem="EVJ-Iw-XiW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="oD1-Af-xxi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bcM-Hq-t7q" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target">
+                    <navigationItem key="navigationItem" title="Example" id="bcM-Hq-t7q" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target">
+                        <barButtonItem key="backBarButtonItem" title=" " id="xGu-ds-2CU"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="kjE-UW-dBz">
                             <connections>
                                 <action selector="tapDone:" destination="BYZ-38-t0r" id="3rq-7d-0lH"/>
@@ -121,6 +134,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="357.60000000000002" y="129.98500749625188"/>
+        </scene>
+        <!--Back Example-->
+        <scene sceneID="GdW-hB-WKg">
+            <objects>
+                <viewController id="8yI-nS-ETb" customClass="BackViewController" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vfv-Ts-QJ1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jp1-nV-dRE">
+                                <rect key="frame" x="8" y="72" width="359" height="60"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.73333333329999995" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Uva-ik-PBY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Animate Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapStartSave:" destination="8yI-nS-ETb" eventType="touchUpInside" id="wh9-Vd-4NI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ki-Ic-nmQ">
+                                <rect key="frame" x="8" y="140" width="359" height="60"/>
+                                <color key="backgroundColor" red="0.76652234789999996" green="0.47299486400000001" blue="0.465547502" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapStopSave:" destination="8yI-nS-ETb" eventType="touchUpInside" id="gXD-C0-KRW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jp1-nV-dRE" firstAttribute="top" secondItem="Gvd-Ya-Ytd" secondAttribute="top" constant="8" id="9KU-2i-qPU"/>
+                            <constraint firstItem="5ki-Ic-nmQ" firstAttribute="height" secondItem="jp1-nV-dRE" secondAttribute="height" id="T0z-rp-ymk"/>
+                            <constraint firstItem="5ki-Ic-nmQ" firstAttribute="trailing" secondItem="jp1-nV-dRE" secondAttribute="trailing" id="UdW-tz-L5B"/>
+                            <constraint firstItem="jp1-nV-dRE" firstAttribute="leading" secondItem="Gvd-Ya-Ytd" secondAttribute="leading" constant="8" id="Vhs-Z7-DEf"/>
+                            <constraint firstItem="5ki-Ic-nmQ" firstAttribute="leading" secondItem="jp1-nV-dRE" secondAttribute="leading" id="Yas-Nc-80G"/>
+                            <constraint firstItem="5ki-Ic-nmQ" firstAttribute="top" secondItem="jp1-nV-dRE" secondAttribute="bottom" constant="8" id="amM-Tl-0dz"/>
+                            <constraint firstItem="Gvd-Ya-Ytd" firstAttribute="trailing" secondItem="jp1-nV-dRE" secondAttribute="trailing" constant="8" id="ilH-la-psn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Gvd-Ya-Ytd"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Back Example" id="Bo9-Eg-9d4" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tvy-y8-ec4">
+                            <connections>
+                                <action selector="tapSave:" destination="8yI-nS-ETb" id="m2h-sq-CtY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicatingNavigationItem" destination="Bo9-Eg-9d4" id="umi-u8-2d4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WAj-Yi-YTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="125"/>
         </scene>
     </scenes>
 </document>

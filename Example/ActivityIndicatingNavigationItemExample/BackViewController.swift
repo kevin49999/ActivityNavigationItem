@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  BackViewController.swift
 //  ActivityIndicatingNavigationItemExample
 //
-//  Created by Kevin Johnson on 10/30/17.
+//  Created by Kevin Johnson on 11/25/17.
 //  Copyright © 2017 Flower From Rock. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class BackViewController: UIViewController {
 
     // MARK: IBOutlet
     
@@ -20,8 +20,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    // MARK: IBAction - Right
-
+    // MARK: IBAction
+    
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
         activityIndicatingNavigationItem.startAnimating(.right)
     }
@@ -32,19 +32,5 @@ class ViewController: UIViewController {
     
     @IBAction func tapStopSave(_ sender: UIButton) {
         activityIndicatingNavigationItem.stopAnimating(.right)
-    }
-    
-    // MARK: IBAction - Left
-    
-    @IBAction func tapDone(_ sender: UIBarButtonItem) {
-        activityIndicatingNavigationItem.startAnimating(.left)
-    }
-    
-    @IBAction func tapStartDone(_ sender: UIButton) {
-        activityIndicatingNavigationItem.startAnimating(.left)
-    }
-    
-    @IBAction func tapStopDone(_ sender: UIButton) {
-        activityIndicatingNavigationItem.stopAnimating(.left)
     }
 }
