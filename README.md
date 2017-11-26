@@ -39,7 +39,7 @@ If you're using a Storyboard, set the name of the Class and Module, then create 
 Or set up programmatically:
 
 ``` swift
-let animating = ActivityIndicatingNavigationItem.init(title: "Title", indicatorStyle: .white)
+let activityIndicatingNavigationItem = ActivityIndicatingNavigationItem.init(title: "Title", indicatorStyle: .white)
 ```
 
 
