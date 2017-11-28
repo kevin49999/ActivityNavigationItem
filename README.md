@@ -39,7 +39,7 @@ If you're using a Storyboard, set the name of the Class and Module, then create 
 Or set up programmatically:
 
 ``` swift
-let activityIndicatingNavigationItem = ActivityIndicatingNavigationItem.init(title: "Title", indicatorStyle: .white)
+let activityIndicatingNavigationItem = ActivityIndicatingNavigationItem.init(title: "Edit Profile", indicatorStyle: .white)
 ```
 
 
@@ -64,7 +64,7 @@ activityIndicatingNavigationItem.indicatorStyle = .white
 
 ## Requirements
 
-Written in Swift 4.0, requires iOS 10.3 and above, Xcode 9.0 and above.
+Written in Swift 4.0, requires iOS 10.0 and above, Xcode 9.0 and above.
 
 
 ## Credits
