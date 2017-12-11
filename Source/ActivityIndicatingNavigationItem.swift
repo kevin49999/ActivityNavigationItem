@@ -17,7 +17,8 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
     // MARK: Public Variables
     
     public var indicatorStyle: UIActivityIndicatorViewStyle! = .gray
-    
+    @IBInspectable public var indicatorColor: UIColor?
+
     // MARK: Private Variables
     
     private var initialRightBarButtonItem: UIBarButtonItem?
@@ -81,6 +82,8 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
         rightBarButtonItem = nil
 
         let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
+        activityIndicator.color = indicatorColor
+
         rightActivityIndicator = activityIndicator
         rightBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
         rightActivityIndicator?.startAnimating()
@@ -97,6 +100,8 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
         leftBarButtonItem = nil
         
         let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
+        activityIndicator.color = indicatorColor
+        
         leftActivityIndicator = activityIndicator
         leftBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
         leftActivityIndicator?.startAnimating()

@@ -55,12 +55,20 @@ Stop animating:
 activityIndicatingNavigationItem.stopAnimating(.right)
 ```
 
-Changing the style (default style is `gray`):
+
+## Configuration
+
+Changing the activity indicator style  (default style is `gray`):
 
 ````swift
 activityIndicatingNavigationItem.indicatorStyle = .white
 ````
 
+Changing the activity indicator color (can also update in Storyboard):
+
+````swift
+activityIndicatingNavigationItem.indicatorColor = .blue
+````
 
 ## Requirements
 
