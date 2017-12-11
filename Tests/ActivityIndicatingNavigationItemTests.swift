@@ -19,7 +19,7 @@ class ActivityIndicatingNavigationItemTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        activityItemUnderTest = ActivityIndicatingNavigationItem.init(title: "Test", indicatorStyle: .gray)
+        activityItemUnderTest = ActivityIndicatingNavigationItem.init(title: "Test", indicatorStyle: .gray, indicatorColor: .red)
         activityItemUnderTest.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: nil, action: nil)
         activityItemUnderTest.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: nil, action: nil)
     }

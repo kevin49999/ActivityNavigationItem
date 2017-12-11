@@ -28,9 +28,10 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
     
     // MARK: Init
     
-    public convenience init(title: String, indicatorStyle: UIActivityIndicatorViewStyle = .gray) {
+    public convenience init(title: String, indicatorStyle: UIActivityIndicatorViewStyle = .gray, indicatorColor: UIColor? = nil) {
         self.init(title: title)
         self.indicatorStyle = indicatorStyle
+        self.indicatorColor = indicatorColor
     }
     
     private override init(title: String) {
