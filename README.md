@@ -9,9 +9,10 @@ _UINavigationItem subclass that indicates activity with UIActivityIndicator for 
 
 ## Description
 
-UINavigationItem subclass you can use to animate a UIActivityIndicatorView in the left/right positions - then when finished animating revert to your preset bar button items. 
-- Helpful for indicating activity with Save/Done bar button items 
-- Common in iOS UI/UX design for edit profile screens, save avatar screens, etc.
+A UINavigationItem subclass you can use to easily animate loading on either side. 
+
+- Useful for indicating activity with system "Save" or "Done" bar buttons
+- Common in iOS UI/UX design when tapping a bar button saves or loads information
 
 <img src="https://raw.githubusercontent.com/longhorn499/ActivityIndicatingNavigationItem/master/Screenshots/Animating.gif"/>
 
