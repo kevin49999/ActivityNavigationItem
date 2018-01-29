@@ -47,11 +47,22 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
     public func startAnimating(_ side: ActivityIndicatingNavigationItemSide) {
         guard !isAnimating(side) else { return }
         
+        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
+        activityIndicator.color = indicatorColor
+        
         switch side {
         case .right:
-            startAnimatingRight()
+            initialRightBarButtonItem = rightBarButtonItem
+            rightBarButtonItem = nil
+            rightActivityIndicator = activityIndicator
+            rightBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
+            rightActivityIndicator?.startAnimating()
         case .left:
-            startAnimatingLeft()
+            initialLeftBarButtonItem = leftBarButtonItem
+            leftBarButtonItem = nil
+            leftActivityIndicator = activityIndicator
+            leftBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
+            leftActivityIndicator?.startAnimating()
         }
     }
     
@@ -60,9 +71,13 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
         
         switch side {
         case .right:
-            stopAnimatingRight()
+            rightActivityIndicator?.stopAnimating()
+            rightActivityIndicator = nil
+            rightBarButtonItem = initialRightBarButtonItem
         case .left:
-            stopAnimatingLeft()
+            leftActivityIndicator?.stopAnimating()
+            leftActivityIndicator = nil
+            leftBarButtonItem = initialLeftBarButtonItem
         }
     }
     
@@ -74,43 +89,5 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
         case .left:
             return leftActivityIndicator?.isAnimating ?? false
         }
-    }
-    
-    // MARK: Private Functions
-    
-    private func startAnimatingRight() {
-        initialRightBarButtonItem = rightBarButtonItem
-        rightBarButtonItem = nil
-
-        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
-        activityIndicator.color = indicatorColor
-
-        rightActivityIndicator = activityIndicator
-        rightBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
-        rightActivityIndicator?.startAnimating()
-    }
-    
-    private func stopAnimatingRight() {
-        rightActivityIndicator?.stopAnimating()
-        rightActivityIndicator = nil
-        rightBarButtonItem = initialRightBarButtonItem
-    }
-    
-    private func startAnimatingLeft() {
-        initialLeftBarButtonItem = leftBarButtonItem
-        leftBarButtonItem = nil
-        
-        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
-        activityIndicator.color = indicatorColor
-        
-        leftActivityIndicator = activityIndicator
-        leftBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
-        leftActivityIndicator?.startAnimating()
-    }
-    
-    private func stopAnimatingLeft() {
-        leftActivityIndicator?.stopAnimating()
-        leftActivityIndicator = nil
-        leftBarButtonItem = initialLeftBarButtonItem
     }
 }
