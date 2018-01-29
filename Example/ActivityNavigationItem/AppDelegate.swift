@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  ActivityIndicatingNavigationItemExample
+//  ActivityNavigationItem
 //
-//  Created by Kevin Johnson on 10/30/17.
-//  Copyright © 2017 Flower From Rock. All rights reserved.
+//  Created by Kevin Johnson on 1/29/18.
+//  Copyright © 2018 FFR. All rights reserved.
 //
 
 import UIKit

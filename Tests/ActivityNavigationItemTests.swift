@@ -1,25 +1,25 @@
 //
-//  ActivityIndicatingNavigationItemTests.swift
-//  ActivityIndicatingNavigationItemTests
+//  ActivityNavigationItemTests.swift
+//  ActivityNavigationItemTests
 //
 //  Created by Kevin Johnson on 10/30/17.
 //  Copyright © 2017 Flower From Rock. All rights reserved.
 //
 
 import XCTest
-@testable import ActivityIndicatingNavigationItem
+@testable import ActivityNavigationItem
 
-class ActivityIndicatingNavigationItemTests: XCTestCase {
+class ActivityNavigationItemTests: XCTestCase {
     
     // MARK: SUT (System Under Test) Variable
     
-    var activityItemUnderTest: ActivityIndicatingNavigationItem!
+    var activityItemUnderTest: ActivityNavigationItem!
     
     // MARK: Setup/TearDown
     
     override func setUp() {
         super.setUp()
-        activityItemUnderTest = ActivityIndicatingNavigationItem.init(title: "Test", indicatorStyle: .gray, indicatorColor: .red)
+        activityItemUnderTest = ActivityNavigationItem.init(title: "Test", indicatorStyle: .gray, indicatorColor: .red)
         activityItemUnderTest.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: nil, action: nil)
         activityItemUnderTest.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: nil, action: nil)
     }

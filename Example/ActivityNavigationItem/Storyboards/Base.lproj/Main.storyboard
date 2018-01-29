@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dGZ-Ol-am8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7gn-aa-1th">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,25 +11,25 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="BW5-VF-mLZ">
+        <scene sceneID="LHK-vX-wHh">
             <objects>
-                <navigationController id="dGZ-Ol-am8" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p28-Cs-lhv">
+                <navigationController id="7gn-aa-1th" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dLs-V1-s0I">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="vhg-81-j4d"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="EZ4-F1-sRZ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0F5-UC-ACe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G33-OW-hQ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="130"/>
+            <point key="canvasLocation" x="-294" y="130"/>
         </scene>
         <!--Example-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ActivityNavigationItem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9Q-XP-FTW">
-                                <rect key="frame" x="114" y="311.5" width="146" height="44"/>
+                                <rect key="frame" x="114.5" y="311.5" width="146" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="7Q5-rj-LQh"/>
                                 </constraints>
@@ -114,7 +114,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Example" id="bcM-Hq-t7q" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target">
+                    <navigationItem key="navigationItem" title="Example" id="bcM-Hq-t7q" customClass="ActivityNavigationItem" customModule="ActivityNavigationItem" customModuleProvider="target">
                         <barButtonItem key="backBarButtonItem" title=" " id="xGu-ds-2CU"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="kjE-UW-dBz">
                             <connections>
@@ -128,17 +128,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicatingNavigationItem" destination="bcM-Hq-t7q" id="BQi-Zc-4Fl"/>
+                        <outlet property="activityNavigationItem" destination="bcM-Hq-t7q" id="aUS-xn-O9T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357.60000000000002" y="129.98500749625188"/>
+            <point key="canvasLocation" x="508" y="130"/>
         </scene>
         <!--Back Example-->
         <scene sceneID="GdW-hB-WKg">
             <objects>
-                <viewController id="8yI-nS-ETb" customClass="BackViewController" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8yI-nS-ETb" customClass="BackViewController" customModule="ActivityNavigationItem" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vfv-Ts-QJ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Gvd-Ya-Ytd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Back Example" id="Bo9-Eg-9d4" customClass="ActivityIndicatingNavigationItem" customModule="ActivityIndicatingNavigationItemExample" customModuleProvider="target">
+                    <navigationItem key="navigationItem" title="Back Example" id="Bo9-Eg-9d4" customClass="ActivityNavigationItem" customModule="ActivityNavigationItem" customModuleProvider="target">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tvy-y8-ec4">
                             <connections>
                                 <action selector="tapSave:" destination="8yI-nS-ETb" id="m2h-sq-CtY"/>
@@ -189,12 +189,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicatingNavigationItem" destination="Bo9-Eg-9d4" id="umi-u8-2d4"/>
+                        <outlet property="activityNavigationItem" destination="Bo9-Eg-9d4" id="i42-pH-ie6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WAj-Yi-YTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1170" y="125"/>
+            <point key="canvasLocation" x="1292" y="130"/>
         </scene>
     </scenes>
 </document>

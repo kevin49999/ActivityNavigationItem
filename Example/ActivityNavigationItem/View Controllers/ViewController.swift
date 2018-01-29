@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ActivityIndicatingNavigationItemExample
+//  ActivityNavigationItemExample
 //
 //  Created by Kevin Johnson on 10/30/17.
 //  Copyright © 2017 Flower From Rock. All rights reserved.
@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
     // MARK: IBOutlet
     
-    @IBOutlet weak var activityIndicatingNavigationItem: ActivityIndicatingNavigationItem!
+    @IBOutlet weak var activityNavigationItem: ActivityNavigationItem!
     
     // MARK: View Lifecycle
     
@@ -23,28 +23,28 @@ class ViewController: UIViewController {
     // MARK: IBAction - Right
 
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
-        activityIndicatingNavigationItem.startAnimating(.right)
+        activityNavigationItem.startAnimating(.right)
     }
     
     @IBAction func tapStartSave(_ sender: UIButton) {
-        activityIndicatingNavigationItem.startAnimating(.right)
+        activityNavigationItem.startAnimating(.right)
     }
     
     @IBAction func tapStopSave(_ sender: UIButton) {
-        activityIndicatingNavigationItem.stopAnimating(.right)
+        activityNavigationItem.stopAnimating(.right)
     }
     
     // MARK: IBAction - Left
     
     @IBAction func tapDone(_ sender: UIBarButtonItem) {
-        activityIndicatingNavigationItem.startAnimating(.left)
+        activityNavigationItem.startAnimating(.left)
     }
     
     @IBAction func tapStartDone(_ sender: UIButton) {
-        activityIndicatingNavigationItem.startAnimating(.left)
+        activityNavigationItem.startAnimating(.left)
     }
     
     @IBAction func tapStopDone(_ sender: UIButton) {
-        activityIndicatingNavigationItem.stopAnimating(.left)
+        activityNavigationItem.stopAnimating(.left)
     }
 }

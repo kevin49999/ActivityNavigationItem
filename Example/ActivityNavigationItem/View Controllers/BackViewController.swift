@@ -1,6 +1,6 @@
 //
 //  BackViewController.swift
-//  ActivityIndicatingNavigationItemExample
+//  ActivityNavigationItemExample
 //
 //  Created by Kevin Johnson on 11/25/17.
 //  Copyright © 2017 Flower From Rock. All rights reserved.
@@ -12,7 +12,7 @@ class BackViewController: UIViewController {
 
     // MARK: IBOutlet
     
-    @IBOutlet weak var activityIndicatingNavigationItem: ActivityIndicatingNavigationItem!
+    @IBOutlet weak var activityNavigationItem: ActivityNavigationItem!
     
     // MARK: View Lifecycle
     
@@ -23,14 +23,14 @@ class BackViewController: UIViewController {
     // MARK: IBAction
     
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
-        activityIndicatingNavigationItem.startAnimating(.right)
+        activityNavigationItem.startAnimating(.right)
     }
     
     @IBAction func tapStartSave(_ sender: UIButton) {
-        activityIndicatingNavigationItem.startAnimating(.right)
+        activityNavigationItem.startAnimating(.right)
     }
     
     @IBAction func tapStopSave(_ sender: UIButton) {
-        activityIndicatingNavigationItem.stopAnimating(.right)
+        activityNavigationItem.stopAnimating(.right)
     }
 }

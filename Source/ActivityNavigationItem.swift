@@ -8,11 +8,11 @@
 
 import UIKit
 
-public enum ActivityIndicatingNavigationItemSide {
+public enum ActivityNavigationItemSide {
     case left, right
 }
 
-public final class ActivityIndicatingNavigationItem: UINavigationItem {
+public final class ActivityNavigationItem: UINavigationItem {
     
     // MARK: Public Variables
     
@@ -44,7 +44,7 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
     
     // MARK: Public Functions
     
-    public func startAnimating(_ side: ActivityIndicatingNavigationItemSide) {
+    public func startAnimating(_ side: ActivityNavigationItemSide) {
         guard !isAnimating(side) else { return }
         
         let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
@@ -66,7 +66,7 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
         }
     }
     
-    public func stopAnimating(_ side: ActivityIndicatingNavigationItemSide) {
+    public func stopAnimating(_ side: ActivityNavigationItemSide) {
         guard isAnimating(side) else { return }
         
         switch side {
@@ -82,7 +82,7 @@ public final class ActivityIndicatingNavigationItem: UINavigationItem {
     }
     
     @discardableResult
-    public func isAnimating(_ side: ActivityIndicatingNavigationItemSide)-> Bool {
+    public func isAnimating(_ side: ActivityNavigationItemSide)-> Bool {
         switch side {
         case .right:
             return rightActivityIndicator?.isAnimating ?? false
