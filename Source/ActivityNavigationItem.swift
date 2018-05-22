@@ -14,13 +14,10 @@ public enum ActivityNavigationItemSide {
 
 public final class ActivityNavigationItem: UINavigationItem {
     
-    // MARK: Public Variables
+    // MARK: Properties
     
     public var indicatorStyle: UIActivityIndicatorViewStyle! = .gray
     @IBInspectable public var indicatorColor: UIColor?
-
-    // MARK: Private Variables
-    
     private var initialRightBarButtonItem: UIBarButtonItem?
     private var initialLeftBarButtonItem: UIBarButtonItem?
     weak private var rightActivityIndicator: UIActivityIndicatorView?
@@ -42,47 +39,70 @@ public final class ActivityNavigationItem: UINavigationItem {
         super.init(coder: coder)
     }
     
-    // MARK: Public Functions
+    // MARK: Start Animating
     
-    public func startAnimating(_ side: ActivityNavigationItemSide) {
-        guard !isAnimating(side) else { return }
-        
-        let activityIndicator = UIActivityIndicatorView.init(activityIndicatorStyle: indicatorStyle)
+    public func startAnimating(side: ActivityNavigationItemSide) {
+        guard !isAnimating(side: side) else { return }
+        switch side {
+        case .right:
+            startAnimatingRight()
+        case .left:
+            startAnimatingLeft()
+        }
+    }
+    
+    private func startAnimatingRight() {
+        let activityIndicator = createActivityIndicator()
+        initialRightBarButtonItem = rightBarButtonItem
+        rightBarButtonItem = nil
+        rightActivityIndicator = activityIndicator
+        rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+        rightActivityIndicator?.startAnimating()
+    }
+    
+    private func startAnimatingLeft() {
+        let activityIndicator = createActivityIndicator()
+        initialLeftBarButtonItem = leftBarButtonItem
+        leftBarButtonItem = nil
+        leftActivityIndicator = activityIndicator
+        leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
+        leftActivityIndicator?.startAnimating()
+    }
+    
+    private func createActivityIndicator() -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: indicatorStyle)
         activityIndicator.color = indicatorColor
-        
+        return activityIndicator
+    }
+    
+    // MARK: - Stop Animating
+    
+    public func stopAnimating(side: ActivityNavigationItemSide) {
+        guard isAnimating(side: side) else { return }
         switch side {
         case .right:
-            initialRightBarButtonItem = rightBarButtonItem
-            rightBarButtonItem = nil
-            rightActivityIndicator = activityIndicator
-            rightBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
-            rightActivityIndicator?.startAnimating()
+            stopAnimatingRight()
         case .left:
-            initialLeftBarButtonItem = leftBarButtonItem
-            leftBarButtonItem = nil
-            leftActivityIndicator = activityIndicator
-            leftBarButtonItem = UIBarButtonItem.init(customView: activityIndicator)
-            leftActivityIndicator?.startAnimating()
+            stopAnimatingLeft()
         }
     }
     
-    public func stopAnimating(_ side: ActivityNavigationItemSide) {
-        guard isAnimating(side) else { return }
-        
-        switch side {
-        case .right:
-            rightActivityIndicator?.stopAnimating()
-            rightActivityIndicator = nil
-            rightBarButtonItem = initialRightBarButtonItem
-        case .left:
-            leftActivityIndicator?.stopAnimating()
-            leftActivityIndicator = nil
-            leftBarButtonItem = initialLeftBarButtonItem
-        }
+    private func stopAnimatingRight() {
+        rightActivityIndicator?.stopAnimating()
+        rightActivityIndicator = nil
+        rightBarButtonItem = initialRightBarButtonItem
     }
+    
+    private func stopAnimatingLeft() {
+        leftActivityIndicator?.stopAnimating()
+        leftActivityIndicator = nil
+        leftBarButtonItem = initialLeftBarButtonItem
+    }
+    
+    // MARK: - Is Animating
     
     @discardableResult
-    public func isAnimating(_ side: ActivityNavigationItemSide)-> Bool {
+    public func isAnimating(side: ActivityNavigationItemSide)-> Bool {
         switch side {
         case .right:
             return rightActivityIndicator?.isAnimating ?? false

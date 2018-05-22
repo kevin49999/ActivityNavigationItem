@@ -23,14 +23,14 @@ class BackViewController: UIViewController {
     // MARK: IBAction
     
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
-        activityNavigationItem.startAnimating(.right)
+        activityNavigationItem.startAnimating(side: .right)
     }
     
     @IBAction func tapStartSave(_ sender: UIButton) {
-        activityNavigationItem.startAnimating(.right)
+        activityNavigationItem.startAnimating(side: .right)
     }
     
     @IBAction func tapStopSave(_ sender: UIButton) {
-        activityNavigationItem.stopAnimating(.right)
+        activityNavigationItem.stopAnimating(side: .right)
     }
 }
