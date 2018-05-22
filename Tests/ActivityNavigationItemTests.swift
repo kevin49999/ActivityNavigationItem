@@ -19,9 +19,9 @@ class ActivityNavigationItemTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        activityItemUnderTest = ActivityNavigationItem.init(title: "Test", indicatorStyle: .gray, indicatorColor: .red)
-        activityItemUnderTest.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .save, target: nil, action: nil)
-        activityItemUnderTest.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .done, target: nil, action: nil)
+        activityItemUnderTest = ActivityNavigationItem(title: "Test", indicatorStyle: .gray, indicatorColor: .red)
+        activityItemUnderTest.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: nil, action: nil)
+        activityItemUnderTest.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
     }
     
     override func tearDown() {
@@ -32,9 +32,10 @@ class ActivityNavigationItemTests: XCTestCase {
     // MARK: Start Animating
     
     func testRightStartAnimating() {
-        activityItemUnderTest.startAnimating(.right)
+        activityItemUnderTest.startAnimating(side: .right)
         
-        guard let rightBarButtonItem = activityItemUnderTest.rightBarButtonItem else { XCTFail()
+        guard let rightBarButtonItem = activityItemUnderTest.rightBarButtonItem else {
+            XCTFail()
             return
         }
         
@@ -47,9 +48,10 @@ class ActivityNavigationItemTests: XCTestCase {
     }
     
     func testLeftStartAnimating() {
-        activityItemUnderTest.startAnimating(.left)
+        activityItemUnderTest.startAnimating(side: .left)
         
-        guard let leftBarButtonItem = activityItemUnderTest.leftBarButtonItem else { XCTFail()
+        guard let leftBarButtonItem = activityItemUnderTest.leftBarButtonItem else {
+            XCTFail()
             return
         }
         
@@ -66,10 +68,10 @@ class ActivityNavigationItemTests: XCTestCase {
     func testRightStopAnimating() {
         let initialRightBarButtonItem = activityItemUnderTest.rightBarButtonItem
         
-        activityItemUnderTest.startAnimating(.right)
+        activityItemUnderTest.startAnimating(side: .right)
         XCTAssertTrue(initialRightBarButtonItem != activityItemUnderTest.rightBarButtonItem)
         
-        activityItemUnderTest.stopAnimating(.right)
+        activityItemUnderTest.stopAnimating(side: .right)
         XCTAssertTrue(initialRightBarButtonItem == activityItemUnderTest.rightBarButtonItem)
 
         if let _ = activityItemUnderTest.rightBarButtonItem?.customView as? UIActivityIndicatorView {
@@ -84,10 +86,10 @@ class ActivityNavigationItemTests: XCTestCase {
     func testLeftStopAnimating() {
         let initialLeftBarButtonItem = activityItemUnderTest.leftBarButtonItem
         
-        activityItemUnderTest.startAnimating(.left)
+        activityItemUnderTest.startAnimating(side: .left)
         XCTAssertTrue(initialLeftBarButtonItem != activityItemUnderTest.leftBarButtonItem)
         
-        activityItemUnderTest.stopAnimating(.left)
+        activityItemUnderTest.stopAnimating(side: .left)
         XCTAssertTrue(initialLeftBarButtonItem == activityItemUnderTest.leftBarButtonItem)
         
         if let _ = activityItemUnderTest.leftBarButtonItem?.customView as? UIActivityIndicatorView {
