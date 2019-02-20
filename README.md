@@ -40,7 +40,7 @@ If you're using a Storyboard, set the name of the Class and Module, then create 
 Or set up programmatically:
 
 ``` swift
-let activityNavigationItem = ActivityNavigationItem.init(title: "Edit Profile", indicatorStyle: .white)
+let activityNavigationItem = ActivityNavigationItem(title: "Edit Profile", indicatorStyle: .white)
 ```
 
 
