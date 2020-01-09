@@ -3,7 +3,7 @@
 //  ActivityNavigationItemTests
 //
 //  Created by Kevin Johnson on 10/30/17.
-//  Copyright © 2017 Flower From Rock. All rights reserved.
+//  Copyright © 2020 Flower From Rock. All rights reserved.
 //
 
 import XCTest
@@ -11,30 +11,40 @@ import XCTest
 
 class ActivityNavigationItemTests: XCTestCase {
     
-    // MARK: SUT (System Under Test) Variable
+    // MARK: System Under Test
     
-    var activityItemUnderTest: ActivityNavigationItem!
+    var sut: ActivityNavigationItem!
     
     // MARK: Setup/TearDown
     
     override func setUp() {
         super.setUp()
-        activityItemUnderTest = ActivityNavigationItem(title: "Test", indicatorStyle: .gray, indicatorColor: .red)
-        activityItemUnderTest.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: nil, action: nil)
-        activityItemUnderTest.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        let vc = UITableViewController()
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .save,
+            target: nil,
+            action: nil
+        )
+        vc.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: nil,
+            action: nil
+        )
+        _ = UINavigationController(rootViewController: vc)
+        sut = ActivityNavigationItem(navigationItem: vc.navigationItem)
     }
     
     override func tearDown() {
-        activityItemUnderTest = nil
+        sut = nil
         super.tearDown()
     }
     
     // MARK: Start Animating
     
     func testRightStartAnimating() {
-        activityItemUnderTest.startAnimating(side: .right)
+        sut.startAnimatingRight()
         
-        guard let rightBarButtonItem = activityItemUnderTest.rightBarButtonItem else {
+        guard let rightBarButtonItem = sut.navigationItem.rightBarButtonItem else {
             XCTFail()
             return
         }
@@ -48,9 +58,9 @@ class ActivityNavigationItemTests: XCTestCase {
     }
     
     func testLeftStartAnimating() {
-        activityItemUnderTest.startAnimating(side: .left)
+        sut.startAnimatingLeft()
         
-        guard let leftBarButtonItem = activityItemUnderTest.leftBarButtonItem else {
+        guard let leftBarButtonItem = sut.navigationItem.leftBarButtonItem else {
             XCTFail()
             return
         }
@@ -66,37 +76,37 @@ class ActivityNavigationItemTests: XCTestCase {
     // MARK: Stop Animating
     
     func testRightStopAnimating() {
-        let initialRightBarButtonItem = activityItemUnderTest.rightBarButtonItem
+        let initialRightBarButtonItem = sut.navigationItem.rightBarButtonItem
         
-        activityItemUnderTest.startAnimating(side: .right)
-        XCTAssertTrue(initialRightBarButtonItem != activityItemUnderTest.rightBarButtonItem)
+        sut.startAnimatingRight()
+        XCTAssertNotEqual(initialRightBarButtonItem, sut.navigationItem.rightBarButtonItem)
         
-        activityItemUnderTest.stopAnimating(side: .right)
-        XCTAssertTrue(initialRightBarButtonItem == activityItemUnderTest.rightBarButtonItem)
+        sut.stopAnimatingRight()
+        XCTAssertEqual(initialRightBarButtonItem, sut.navigationItem.rightBarButtonItem)
 
-        if let _ = activityItemUnderTest.rightBarButtonItem?.customView as? UIActivityIndicatorView {
-            XCTFail("Should not still be UIActivityIndicatorView") // Possible strange use case where default value is a UIActivityIndicatorView..
+        if sut.navigationItem.rightBarButtonItem?.customView as? UIActivityIndicatorView != nil {
+            XCTFail("Should not still be UIActivityIndicatorView")
         }
         
-        if let rightBarButtonItem = activityItemUnderTest.rightBarButtonItem {
+        if let rightBarButtonItem = sut.navigationItem.rightBarButtonItem {
             XCTAssertTrue(rightBarButtonItem.isEnabled, "If right bar item non-nil, should be back to enabled")
         }
     }
     
     func testLeftStopAnimating() {
-        let initialLeftBarButtonItem = activityItemUnderTest.leftBarButtonItem
+        let initialLeftBarButtonItem = sut.navigationItem.leftBarButtonItem
         
-        activityItemUnderTest.startAnimating(side: .left)
-        XCTAssertTrue(initialLeftBarButtonItem != activityItemUnderTest.leftBarButtonItem)
+        sut.startAnimatingLeft()
+        XCTAssertNotEqual(initialLeftBarButtonItem, sut.navigationItem.leftBarButtonItem)
         
-        activityItemUnderTest.stopAnimating(side: .left)
-        XCTAssertTrue(initialLeftBarButtonItem == activityItemUnderTest.leftBarButtonItem)
+        sut.stopAnimatingLeft()
+        XCTAssertEqual(initialLeftBarButtonItem, sut.navigationItem.leftBarButtonItem)
         
-        if let _ = activityItemUnderTest.leftBarButtonItem?.customView as? UIActivityIndicatorView {
-            XCTFail("Should not still be UIActivityIndicatorView") // ""
+        if sut.navigationItem.leftBarButtonItem?.customView as? UIActivityIndicatorView != nil {
+            XCTFail("Should not still be UIActivityIndicatorView")
         }
         
-        if let leftBarButtonItem = activityItemUnderTest.leftBarButtonItem {
+        if let leftBarButtonItem = sut.navigationItem.leftBarButtonItem {
             XCTAssertTrue(leftBarButtonItem.isEnabled, "If left bar item non-nil, should be back to enabled")
         }
     }
