@@ -27,7 +27,7 @@ Or you can manually import the `ActivityNavigationItem.swift` from the `Source` 
 ``` swift
   var activityNavigationItem: ActivityNavigationItem = ActivityNavigationItem(navigationItem: controller.navigationItem)
 
-  func saveData {
+  func saveData() {
     activityNavigationItem.startAnimatingRight()
     // Do something async..
   }
