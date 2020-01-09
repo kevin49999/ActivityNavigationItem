@@ -3,7 +3,7 @@
 //  ActivityNavigationItemExample
 //
 //  Created by Kevin Johnson on 10/30/17.
-//  Copyright © 2017 Flower From Rock. All rights reserved.
+//  Copyright © 2020 Flower From Rock. All rights reserved.
 //
 
 import UIKit
@@ -20,14 +20,14 @@ class ViewController: UITableViewController {
 
     @IBAction func tapDone(_ sender: UIBarButtonItem) {
         activityNavigationItem.startAnimatingLeft()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.activityNavigationItem.stopAnimatingLeft()
         })
     }
 
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
         activityNavigationItem.startAnimatingRight()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
             self.activityNavigationItem.stopAnimatingRight()
         })
     }
