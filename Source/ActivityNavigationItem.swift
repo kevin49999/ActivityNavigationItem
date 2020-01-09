@@ -13,19 +13,15 @@ public class ActivityNavigationItem {
     unowned let navigationItem: UINavigationItem
     private let leftActivityIndicatorView: UIActivityIndicatorView
     private let rightActivityIndicatorView: UIActivityIndicatorView
-    private weak var originalLeftBarButtonItem: UIBarButtonItem?
-    private weak var originalRightBarButtonItem: UIBarButtonItem?
+    private var originalLeftBarButtonItem: UIBarButtonItem?
+    private var originalRightBarButtonItem: UIBarButtonItem?
     private lazy var leftActivityIndicatorBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(customView: leftActivityIndicatorView)
     }()
     private lazy var rightActivityIndicatorBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(customView: rightActivityIndicatorView)
     }()
-
-    deinit {
-        print("!") // make sure..
-    }
-
+    
     init(
         navigationItem: UINavigationItem,
         leftActivityIndicatorView: UIActivityIndicatorView = .init(style: .medium),

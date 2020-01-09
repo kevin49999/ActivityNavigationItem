@@ -8,43 +8,27 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
 
-    // MARK: IBOutlet
-    
-    @IBOutlet weak var activityNavigationItem: ActivityNavigationItem!
-    
-    // MARK: View Lifecycle
-    
+    private lazy var activityNavigationItem: ActivityNavigationItem = {
+        return ActivityNavigationItem(navigationItem: self.navigationItem)
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    // MARK: IBAction - Right
+
+    @IBAction func tapDone(_ sender: UIBarButtonItem) {
+        activityNavigationItem.startAnimatingLeft()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            self.activityNavigationItem.stopAnimatingLeft()
+        })
+    }
 
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
-        activityNavigationItem.startAnimating(side: .right)
-    }
-    
-    @IBAction func tapStartSave(_ sender: UIButton) {
-        activityNavigationItem.startAnimating(side: .right)
-    }
-    
-    @IBAction func tapStopSave(_ sender: UIButton) {
-        activityNavigationItem.stopAnimating(side: .right)
-    }
-    
-    // MARK: IBAction - Left
-    
-    @IBAction func tapDone(_ sender: UIBarButtonItem) {
-        activityNavigationItem.startAnimating(side: .left)
-    }
-    
-    @IBAction func tapStartDone(_ sender: UIButton) {
-        activityNavigationItem.startAnimating(side: .left)
-    }
-    
-    @IBAction func tapStopDone(_ sender: UIButton) {
-        activityNavigationItem.stopAnimating(side: .left)
+        activityNavigationItem.startAnimatingRight()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            self.activityNavigationItem.stopAnimatingRight()
+        })
     }
 }
