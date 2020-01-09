@@ -20,7 +20,7 @@ With [CocoaPods](https://cocoapods.org) add ActivityNavigationItem to your Podfi
 pod 'ActivityNavigationItem'
 ```
 
-Or you can manually import the file from the `Source` folder
+Or you can manually import the `ActivityNavigationItem.swift` from the `Source` folder
 
 ## Usage
 
@@ -33,7 +33,7 @@ Or you can manually import the file from the `Source` folder
   }
     
    func dataSaved() {
-     activityNavigationItem.stopAnimatingLeft()
+     activityNavigationItem.stopAnimatingRight()
      // Carry on
    } 
 ```
