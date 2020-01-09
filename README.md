@@ -1,6 +1,6 @@
 # ActivityNavigationItem
 
-_Indicates activity for `UINavigationItem`'s bar butotn items_
+_Indicates activity for `UINavigationItem`'s bar button items_
 
 ![Platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ActivityNavigationItem.svg)](https://cocoapods.org/pods/ActivityNavigationItem)
@@ -22,6 +22,8 @@ With [CocoaPods](https://cocoapods.org), add ActivityNavigationItem to your Podf
 pod 'ActivityNavigationItem'
 ```
 
+Or you can manually import the files from the `Source` folder
+
 ## Usage
 
 ``` swift
@@ -42,11 +44,9 @@ pod 'ActivityNavigationItem'
 
 Written in Swift 5.0, requires iOS 13.0 and above, Xcode 11.2 and above.
 
-
 ## Credits
 
 Created by [Kevin Johnson](http://www.johnsonkevin.com) 🤠
-
 
 ## License
 
