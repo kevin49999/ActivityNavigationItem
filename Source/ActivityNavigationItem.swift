@@ -1,113 +1,73 @@
 //
-//  AnimatingBarButtonItem.swift
-//  TestAnimatingBarButtonItem
+//  ActivityNavigationItem.swift
+//  ActivityNavigationItem
 //
 //  Created by Kevin Johnson on 10/23/17.
-//  Copyright © 2017 FFR. All rights reserved.
+//  Copyright © 2020 Flower From Rock. All rights reserved.
 //
 
 import UIKit
 
-public enum ActivityNavigationItemSide {
-    case left, right
+public class ActivityNavigationItem {
+
+    unowned let navigationItem: UINavigationItem
+    private let leftActivityIndicatorView: UIActivityIndicatorView
+    private let rightActivityIndicatorView: UIActivityIndicatorView
+    private var originalLeftBarButtonItem: UIBarButtonItem?
+    private var originalRightBarButtonItem: UIBarButtonItem?
+    private lazy var leftActivityIndicatorBarButtonItem: UIBarButtonItem = {
+        return UIBarButtonItem(customView: leftActivityIndicatorView)
+    }()
+    private lazy var rightActivityIndicatorBarButtonItem: UIBarButtonItem = {
+        return UIBarButtonItem(customView: rightActivityIndicatorView)
+    }()
+    
+    init(
+        navigationItem: UINavigationItem,
+        leftActivityIndicatorView: UIActivityIndicatorView = .init(style: .medium),
+        rightActivityIndicatorView: UIActivityIndicatorView = .init(style: .medium)
+    ) {
+        self.navigationItem = navigationItem
+        self.leftActivityIndicatorView = leftActivityIndicatorView
+        self.rightActivityIndicatorView = rightActivityIndicatorView
+    }
+
+    func startAnimatingRight() {
+        originalRightBarButtonItem = navigationItem.rightBarButtonItem
+        navigationItem.rightBarButtonItem = rightActivityIndicatorBarButtonItem
+        rightActivityIndicatorBarButtonItem.startAnimating()
+    }
+
+    func stopAnimatingRight() {
+        rightActivityIndicatorBarButtonItem.stopAnimating()
+        navigationItem.rightBarButtonItem = originalRightBarButtonItem
+    }
+
+    func startAnimatingLeft() {
+        originalLeftBarButtonItem = navigationItem.leftBarButtonItem
+        navigationItem.leftBarButtonItem = leftActivityIndicatorBarButtonItem
+        leftActivityIndicatorBarButtonItem.startAnimating()
+    }
+
+    func stopAnimatingLeft() {
+        leftActivityIndicatorBarButtonItem.stopAnimating()
+        navigationItem.leftBarButtonItem = originalLeftBarButtonItem
+    }
 }
 
-public final class ActivityNavigationItem: UINavigationItem {
-    
-    // MARK: Properties
-    
-    public var indicatorStyle: UIActivityIndicatorViewStyle! = .gray
-    @IBInspectable public var indicatorColor: UIColor?
-    private var initialRightBarButtonItem: UIBarButtonItem?
-    private var initialLeftBarButtonItem: UIBarButtonItem?
-    weak private var rightActivityIndicator: UIActivityIndicatorView?
-    weak private var leftActivityIndicator: UIActivityIndicatorView?
-    
-    // MARK: Init
-    
-    public convenience init(title: String, indicatorStyle: UIActivityIndicatorViewStyle = .gray, indicatorColor: UIColor? = nil) {
-        self.init(title: title)
-        self.indicatorStyle = indicatorStyle
-        self.indicatorColor = indicatorColor
-    }
-    
-    private override init(title: String) {
-        super.init(title: title)
-    }
-    
-    public required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    // MARK: Start Animating
-    
-    public func startAnimating(side: ActivityNavigationItemSide) {
-        guard !isAnimating(side: side) else { return }
-        switch side {
-        case .right:
-            startAnimatingRight()
-        case .left:
-            startAnimatingLeft()
+fileprivate extension UIBarButtonItem {
+    var activityIndicatorView: UIActivityIndicatorView? {
+        if let indicator = customView as? UIActivityIndicatorView {
+            return indicator
         }
+        return nil
     }
-    
-    private func startAnimatingRight() {
-        let activityIndicator = createActivityIndicator()
-        initialRightBarButtonItem = rightBarButtonItem
-        rightBarButtonItem = nil
-        rightActivityIndicator = activityIndicator
-        rightBarButtonItem = UIBarButtonItem(customView: activityIndicator)
-        rightActivityIndicator?.startAnimating()
+
+    func startAnimating() {
+        activityIndicatorView?.startAnimating()
     }
-    
-    private func startAnimatingLeft() {
-        let activityIndicator = createActivityIndicator()
-        initialLeftBarButtonItem = leftBarButtonItem
-        leftBarButtonItem = nil
-        leftActivityIndicator = activityIndicator
-        leftBarButtonItem = UIBarButtonItem(customView: activityIndicator)
-        leftActivityIndicator?.startAnimating()
-    }
-    
-    private func createActivityIndicator() -> UIActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: indicatorStyle)
-        activityIndicator.color = indicatorColor
-        return activityIndicator
-    }
-    
-    // MARK: - Stop Animating
-    
-    public func stopAnimating(side: ActivityNavigationItemSide) {
-        guard isAnimating(side: side) else { return }
-        switch side {
-        case .right:
-            stopAnimatingRight()
-        case .left:
-            stopAnimatingLeft()
-        }
-    }
-    
-    private func stopAnimatingRight() {
-        rightActivityIndicator?.stopAnimating()
-        rightActivityIndicator = nil
-        rightBarButtonItem = initialRightBarButtonItem
-    }
-    
-    private func stopAnimatingLeft() {
-        leftActivityIndicator?.stopAnimating()
-        leftActivityIndicator = nil
-        leftBarButtonItem = initialLeftBarButtonItem
-    }
-    
-    // MARK: - Is Animating
-    
-    @discardableResult
-    public func isAnimating(side: ActivityNavigationItemSide)-> Bool {
-        switch side {
-        case .right:
-            return rightActivityIndicator?.isAnimating ?? false
-        case .left:
-            return leftActivityIndicator?.isAnimating ?? false
-        }
+
+    func stopAnimating() {
+        activityIndicatorView?.stopAnimating()
     }
 }
