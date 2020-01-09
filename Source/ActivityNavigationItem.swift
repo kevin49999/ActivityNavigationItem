@@ -22,7 +22,7 @@ public class ActivityNavigationItem {
         return UIBarButtonItem(customView: rightActivityIndicatorView)
     }()
     
-    init(
+    public init(
         navigationItem: UINavigationItem,
         leftActivityIndicatorView: UIActivityIndicatorView = .init(style: .medium),
         rightActivityIndicatorView: UIActivityIndicatorView = .init(style: .medium)
@@ -32,24 +32,24 @@ public class ActivityNavigationItem {
         self.rightActivityIndicatorView = rightActivityIndicatorView
     }
 
-    func startAnimatingRight() {
+    public func startAnimatingRight() {
         originalRightBarButtonItem = navigationItem.rightBarButtonItem
         navigationItem.rightBarButtonItem = rightActivityIndicatorBarButtonItem
         rightActivityIndicatorBarButtonItem.startAnimating()
     }
 
-    func stopAnimatingRight() {
+    public func stopAnimatingRight() {
         rightActivityIndicatorBarButtonItem.stopAnimating()
         navigationItem.rightBarButtonItem = originalRightBarButtonItem
     }
 
-    func startAnimatingLeft() {
+    public func startAnimatingLeft() {
         originalLeftBarButtonItem = navigationItem.leftBarButtonItem
         navigationItem.leftBarButtonItem = leftActivityIndicatorBarButtonItem
         leftActivityIndicatorBarButtonItem.startAnimating()
     }
 
-    func stopAnimatingLeft() {
+    public func stopAnimatingLeft() {
         leftActivityIndicatorBarButtonItem.stopAnimating()
         navigationItem.leftBarButtonItem = originalLeftBarButtonItem
     }
