@@ -1,7 +1,5 @@
 # ActivityNavigationItem
 
-_Indicates activity for `UINavigationItem`'s bar button items_
-
 ![Platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg)
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ActivityNavigationItem.svg)](https://cocoapods.org/pods/ActivityNavigationItem)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/longhorn499/ActivityNavigationItem/raw/master/LICENSE.md)
@@ -16,13 +14,13 @@ _Indicates activity for `UINavigationItem`'s bar button items_
 
 ## Installation
 
-With [CocoaPods](https://cocoapods.org), add ActivityNavigationItem to your Podfile:
+With [CocoaPods](https://cocoapods.org) add ActivityNavigationItem to your Podfile:
 
 ```
 pod 'ActivityNavigationItem'
 ```
 
-Or you can manually import the files from the `Source` folder
+Or you can manually import the file from the `Source` folder
 
 ## Usage
 
