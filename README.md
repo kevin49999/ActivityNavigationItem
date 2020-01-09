@@ -20,12 +20,12 @@ With [CocoaPods](https://cocoapods.org) add ActivityNavigationItem to your Podfi
 pod 'ActivityNavigationItem'
 ```
 
-Or you can manually import the `ActivityNavigationItem.swift` from the `Source` folder
+Or you can manually import `ActivityNavigationItem.swift` from the `Source` folder
 
 ## Usage
 
 ``` swift
-  var activityNavigationItem: ActivityNavigationItem = ActivityNavigationItem(navigationItem: controller.navigationItem)
+  var activityNavigationItem = ActivityNavigationItem(navigationItem: controller.navigationItem)
 
   func saveData() {
     activityNavigationItem.startAnimatingRight()
