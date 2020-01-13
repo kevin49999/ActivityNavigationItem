@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "ActivityNavigationItem"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "Indicate activity on UINavigationItem"
   s.description  = "Animate the right/left UINavigationItem bar button items. Now a common UI practice for saving/loading information with bar button taps"
   s.homepage     = "https://github.com/longhorn499/ActivityNavigationItem"
