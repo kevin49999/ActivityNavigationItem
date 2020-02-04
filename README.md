@@ -26,16 +26,10 @@ Or you can manually import `ActivityNavigationItem.swift` from the `Source` fold
 
 ``` swift
   var activityNavigationItem = ActivityNavigationItem(navigationItem: controller.navigationItem)
-
-  func saveData() {
-    activityNavigationItem.startAnimatingRight()
-    // Do something async..
-  }
-    
-   func dataSaved() {
-     activityNavigationItem.stopAnimatingRight()
-     // Carry on
-   } 
+  
+  activityNavigationItem.startAnimatingRight()
+  ...
+  activityNavigationItem.stopAnimatingRight()
 ```
 
 ## Requirements
