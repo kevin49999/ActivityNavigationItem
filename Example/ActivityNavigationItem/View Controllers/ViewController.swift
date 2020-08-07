@@ -11,7 +11,11 @@ import UIKit
 class ViewController: UITableViewController {
 
     private lazy var activityNavigationItem: ActivityNavigationItem = {
-        return ActivityNavigationItem(navigationItem: self.navigationItem)
+        let left = UIActivityIndicatorView()
+        left.color = .systemBlue
+        let right = UIActivityIndicatorView()
+        right.color = .systemBlue
+        return ActivityNavigationItem(navigationItem: self.navigationItem, leftActivityIndicatorView: left, rightActivityIndicatorView: right)
     }()
 
     override func viewDidLoad() {
