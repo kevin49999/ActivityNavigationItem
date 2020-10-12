@@ -4,7 +4,6 @@
 [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ActivityNavigationItem.svg)](https://cocoapods.org/pods/ActivityNavigationItem)
 [![MIT license](http://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/longhorn499/ActivityNavigationItem/raw/master/LICENSE.md)
 
-
 ## Description
 
 - Useful for indicating activity with system "Save" or "Done" `UIBarButtonItem`
@@ -14,13 +13,23 @@
 
 ## Installation
 
-With [CocoaPods](https://cocoapods.org) add ActivityNavigationItem to your Podfile:
+### [Swift Package Manager](https://swift.org/package-manager/) 
+
+In Xcode go to `File` -> `Swift Packages` -> `Add Package Dependency` and paste the url for this repo: `https://github.com/longhorn499/ActivityNavigationItem`.
+
+### [CocoaPods](https://cocoapods.org) 
+
+Add ActivityNavigationItem to your Podfile:
 
 ```
 pod 'ActivityNavigationItem'
 ```
 
-Or you can manually import `ActivityNavigationItem.swift` from the `Source` folder
+and run `pod install`
+
+### Manual
+
+Or you can manually add `ActivityNavigationItem.swift` from the `Source` folder
 
 ## Usage
 
