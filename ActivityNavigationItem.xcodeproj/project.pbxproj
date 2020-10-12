@@ -11,6 +11,7 @@
 		0A8D1E771FA7FD41004F8D8B /* ActivityNavigationItem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A8D1E6D1FA7FD41004F8D8B /* ActivityNavigationItem.framework */; };
 		0A8D1E8E1FA7FE2D004F8D8B /* ActivityNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8D1E8A1FA7FE2D004F8D8B /* ActivityNavigationItem.swift */; };
 		0A8D1E8F1FA7FE2D004F8D8B /* ActivityNavigationItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A8D1E8C1FA7FE2D004F8D8B /* ActivityNavigationItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5213AA9C2533FD0400C35129 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5213AA9B2533FD0400C35129 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +31,7 @@
 		0A8D1E8C1FA7FE2D004F8D8B /* ActivityNavigationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityNavigationItem.h; sourceTree = "<group>"; };
 		0A8D1E8D1FA7FE2D004F8D8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A8D1E921FA7FE31004F8D8B /* ActivityNavigationItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityNavigationItemTests.swift; sourceTree = "<group>"; };
+		5213AA9B2533FD0400C35129 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		525E3F361FBB6DF6004E6556 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +57,7 @@
 		0A8D1E631FA7FD41004F8D8B = {
 			isa = PBXGroup;
 			children = (
+				5213AA9B2533FD0400C35129 /* README.md */,
 				0A8D1E891FA7FE2D004F8D8B /* Source */,
 				0A8D1E911FA7FE31004F8D8B /* Tests */,
 				0A8D1E6E1FA7FD41004F8D8B /* Products */,
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5213AA9C2533FD0400C35129 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
