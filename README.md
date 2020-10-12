@@ -15,7 +15,7 @@
 
 ### [Swift Package Manager](https://swift.org/package-manager/) 
 
-In Xcode go to `File` -> `Swift Packages` -> `Add Package Dependency` and paste the url for this repo: `https://github.com/longhorn499/ActivityNavigationItem`.
+In Xcode go to `File` -> `Swift Packages` -> `Add Package Dependency` and paste the url for this repo: `https://github.com/longhorn499/ActivityNavigationItem`
 
 ### [CocoaPods](https://cocoapods.org) 
 
