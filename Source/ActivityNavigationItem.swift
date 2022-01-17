@@ -40,7 +40,9 @@ public class ActivityNavigationItem {
 
     public func stopAnimatingRight() {
         rightActivityIndicatorBarButtonItem.stopAnimating()
-        navigationItem.rightBarButtonItem = originalRightBarButtonItem
+        if originalRightBarButtonItem != nil {
+            navigationItem.rightBarButtonItem = originalRightBarButtonItem
+        }
     }
 
     public func startAnimatingLeft() {
@@ -51,7 +53,9 @@ public class ActivityNavigationItem {
 
     public func stopAnimatingLeft() {
         leftActivityIndicatorBarButtonItem.stopAnimating()
-        navigationItem.leftBarButtonItem = originalLeftBarButtonItem
+        if originalLeftBarButtonItem != nil {
+            navigationItem.leftBarButtonItem = originalRightBarButtonItem
+        }
     }
 }
 
