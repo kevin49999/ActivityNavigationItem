@@ -16,12 +16,14 @@ let package = Package(
     targets: [
         .target(
             name: "ActivityNavigationItem",
-            path: "./Source"
+            path: "Source",
+            exclude: ["Supporting Files"]
         ),
         .testTarget(
             name: "ActivityNavigationItemTests",
             dependencies: ["ActivityNavigationItem"],
-            path: "./Tests"
+            path: "Tests",
+            exclude: ["Info.plist"]
         ),
     ]
 )
